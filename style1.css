@@ -1,0 +1,448 @@
+
+  :root{
+    --bg:#08080a;
+    --bg-alt:#0d0d10;
+    --surface:#131316;
+    --surface-2:#1b1b20;
+    --line: rgba(255,255,255,0.08);
+    --red:#e0202f;
+    --red-dark:#7a0f18;
+    --red-glow: rgba(224,32,47,0.35);
+    --gold:#d4af37;
+    --gold-light:#f2d97e;
+    --text:#f4f4f5;
+    --muted:#9a9aa3;
+  }
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+  }
+  .font-display{font-family:'Rajdhani', sans-serif;}
+  ::selection{background:var(--red); color:#fff;}
+
+  /* scrollbar */
+  ::-webkit-scrollbar{width:8px;}
+  ::-webkit-scrollbar-track{background:var(--bg);}
+  ::-webkit-scrollbar-thumb{background:var(--surface-2); border-radius:4px;}
+
+  .gold-text{
+    background: linear-gradient(120deg, var(--gold-light), var(--gold) 55%, #a9791f);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+
+  .hero-glow{
+    background:
+      radial-gradient(60% 50% at 50% 0%, var(--red-glow) 0%, transparent 70%),
+      radial-gradient(35% 35% at 85% 15%, rgba(212,175,55,0.15) 0%, transparent 70%);
+  }
+
+  .card-border{
+    border:1px solid var(--line);
+    background:linear-gradient(180deg, var(--surface) 0%, var(--surface) 100%);
+  }
+
+  .card-glow:hover{
+    border-color: rgba(224,32,47,0.5);
+    box-shadow: 0 0 0 1px rgba(224,32,47,0.15), 0 20px 40px -20px rgba(224,32,47,0.35);
+  }
+
+  .featured-glow{
+    border-color: var(--gold);
+    box-shadow: 0 0 0 1px rgba(212,175,55,0.35), 0 25px 60px -25px rgba(212,175,55,0.4);
+  }
+
+  .btn-primary{
+    background: linear-gradient(180deg, var(--red) 0%, var(--red-dark) 100%);
+    box-shadow: 0 8px 24px -8px rgba(224,32,47,0.6), inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+  .btn-primary:hover{filter:brightness(1.12);}
+
+  .btn-gold{
+    background: linear-gradient(180deg, var(--gold-light), var(--gold));
+    color:#1a1204;
+  }
+  .btn-gold:hover{filter:brightness(1.08);}
+
+  .tab-active{
+    background: linear-gradient(180deg, var(--gold-light), var(--gold));
+    color:#1a1204;
+  }
+
+  .badge-live::before{
+    content:'';
+    display:inline-block;
+    width:8px;height:8px;
+    border-radius:9999px;
+    background:#3ce06f;
+    margin-right:8px;
+    box-shadow:0 0 0 0 rgba(60,224,111,0.6);
+    animation: pulse-dot 1.6s infinite;
+  }
+  @keyframes pulse-dot{
+    0%{box-shadow:0 0 0 0 rgba(60,224,111,0.6);}
+    70%{box-shadow:0 0 0 8px rgba(60,224,111,0);}
+    100%{box-shadow:0 0 0 0 rgba(60,224,111,0);}
+  }
+
+  .divider-fade{
+    height:1px;
+    background:linear-gradient(90deg, transparent, var(--line) 20%, var(--line) 80%, transparent);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  .section-num{
+    font-family:'Rajdhani', sans-serif;
+    color: var(--gold);
+    letter-spacing:0.2em;
+  }
+
+  .mesh-line{
+    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 42px 42px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, black 20%, transparent 75%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, black 20%, transparent 75%);
+  }
+/* ============ FOOTER STYLES (ASWA SELLERS) ============ */
+/* Paste inside your <style> tag, or link as a separate stylesheet.        */
+/* Falls back to its own colors if --red / --gold / --bg vars don't exist. */
+
+.aswa-footer{
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-alt, #0d0d10);
+  border-top: 1px solid var(--line, rgba(255,255,255,0.08));
+  padding: 4rem 0 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text, #f4f4f5);
+}
+
+.aswa-footer-glow{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(45% 60% at 15% 0%, rgba(224,32,47,0.10) 0%, transparent 70%),
+    radial-gradient(35% 50% at 90% 10%, rgba(212,175,55,0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.aswa-footer-inner{
+  position: relative;
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.aswa-gold{
+  background: linear-gradient(120deg, var(--gold-light, #f2d97e), var(--gold, #d4af37) 55%, #a9791f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- Top grid ---- */
+.aswa-footer-top{
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.aswa-footer-logo{
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+.aswa-footer-tagline{
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--muted, #9a9aa3);
+  max-width: 320px;
+}
+
+.aswa-footer-whatsapp{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.4rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 9999px;
+  background: linear-gradient(180deg, var(--red, #e0202f) 0%, var(--red-dark, #7a0f18) 100%);
+  box-shadow: 0 8px 20px -8px rgba(224,32,47,0.55);
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+.aswa-footer-whatsapp:hover{
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+}
+
+.aswa-footer-col h4{
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold, #d4af37);
+  margin-bottom: 1rem;
+}
+
+.aswa-footer-col ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.aswa-footer-col li{
+  font-size: 0.85rem;
+  color: var(--muted, #9a9aa3);
+}
+
+.aswa-footer-col a{
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.aswa-footer-col a:hover{
+  color: #fff;
+}
+
+.aswa-footer-pay li{
+  position: relative;
+  padding-left: 1rem;
+}
+.aswa-footer-pay li::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 5px;
+  height: 5px;
+  border-radius: 9999px;
+  background: var(--red, #e0202f);
+}
+
+/* ---- Divider ---- */
+.aswa-footer-divider{
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line, rgba(255,255,255,0.08)) 20%, var(--line, rgba(255,255,255,0.08)) 80%, transparent);
+}
+
+/* ---- Bottom bar ---- */
+.aswa-footer-bottom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.75rem 0;
+  font-size: 0.75rem;
+  color: var(--muted, #9a9aa3);
+  text-align: center;
+}
+
+.aswa-back-to-top{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid var(--line, rgba(255,255,255,0.08));
+  color: var(--muted, #9a9aa3);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+.aswa-back-to-top:hover{
+  border-color: rgba(212,175,55,0.45);
+  color: var(--gold-light, #f2d97e);
+  transform: translateY(-2px);
+}
+.aswa-back-to-top svg{
+  transition: transform 0.2s ease;
+}
+.aswa-back-to-top:hover svg{
+  transform: translateY(-2px);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px){
+  .aswa-footer-top{
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+  }
+  .aswa-footer-brand{
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px){
+  .aswa-footer-top{
+    grid-template-columns: 1fr;
+  }
+  .aswa-footer-bottom{
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .aswa-footer-whatsapp,
+  .aswa-back-to-top,
+  .aswa-back-to-top svg{
+    transition: none !important;
+  }
+}
+/* ============ SIDE SCROLL BAR STYLES (ASWA SELLERS) ============ */
+/* Paste inside your <style> tag, or link as a separate stylesheet. */
+/* Falls back to its own colors if --red / --gold vars don't exist. */
+
+.aswa-side-nav{
+  position: fixed;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  z-index: 60;
+  display: none; /* shown from tablet-landscape up, see media query below */
+  align-items: center;
+}
+
+@media (min-width: 1024px){
+  .aswa-side-nav{ display: flex; }
+}
+
+/* vertical track + fill */
+.aswa-side-track{
+  position: absolute;
+  left: 4px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  border-radius: 9999px;
+  background: var(--line, rgba(255,255,255,0.1));
+  overflow: hidden;
+}
+
+.aswa-side-progress{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, var(--red, #e0202f), var(--gold, #d4af37));
+  border-radius: 9999px;
+  transition: height 0.15s ease-out;
+}
+
+/* dots */
+.aswa-side-dots{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: relative;
+}
+
+.aswa-dot{
+  position: relative;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  border: 2px solid var(--muted, #9a9aa3);
+  background: var(--bg, #08080a);
+  text-decoration: none;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.aswa-dot:hover{
+  border-color: var(--gold, #d4af37);
+  transform: scale(1.25);
+}
+
+.aswa-dot.active{
+  border-color: var(--gold, #d4af37);
+  background: linear-gradient(180deg, var(--gold-light, #f2d97e), var(--gold, #d4af37));
+  box-shadow: 0 0 0 4px rgba(212,175,55,0.15), 0 0 12px rgba(224,32,47,0.45);
+  transform: scale(1.15);
+}
+
+/* hover label */
+.aswa-dot-label{
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  white-space: nowrap;
+  background: var(--surface, #131316);
+  color: var(--text, #f4f4f5);
+  border: 1px solid var(--line, rgba(255,255,255,0.08));
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.aswa-dot:hover .aswa-dot-label{
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .aswa-side-progress,
+  .aswa-dot,
+  .aswa-dot-label{
+    transition: none !important;
+  }
+}
+.pay-method-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 10px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.pay-method-card:hover {
+  border-color: rgba(235, 179, 8, 0.5);
+  background: rgba(235, 179, 8, 0.04);
+  transform: translateY(-2px);
+}
+
+.pay-method-card.active-method {
+  border-color: var(--gold) !important;
+  background: rgba(235, 179, 8, 0.12) !important;
+  box-shadow: 0 0 15px rgba(235, 179, 8, 0.15);
+}
